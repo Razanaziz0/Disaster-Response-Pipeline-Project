@@ -1,10 +1,10 @@
 # Disaster-Response-Pipeline-Project
 
 ## Table of Contents
-* [About Project]() 
-* [Installation]()
-* [Instructions to run the code]()
-* [Licensing]()
+* [About Project](https://github.com/Razanaziz0/Disaster-Response-Pipeline-Project/blob/main/README.md#about-project) 
+* [Installation](https://github.com/Razanaziz0/Disaster-Response-Pipeline-Project/blob/main/README.md#installation)
+* [Instructions to run the code](https://github.com/Razanaziz0/Disaster-Response-Pipeline-Project/blob/main/README.md#instructions-to-run-the-code)
+* [Licensing](https://github.com/Razanaziz0/Disaster-Response-Pipeline-Project/blob/main/README.md#licensing)
 ## About Project
 #### This is the project of Udacity's data scientist nanodegree program 
   Here I'm going to apply the  ETL & ML pipeline process on text message data to classify disaster messages.
