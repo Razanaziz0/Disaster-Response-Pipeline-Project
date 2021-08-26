@@ -3,10 +3,11 @@
 ## Table of Contents
 * [About Project]() 
 * [Installation]()
-* [Results]()
+* [Instructions to run the code]()
 * [Licensing]()
 ## About Project
-#### This is the project of Udacity's data scientist nanodegree program ,I'm going to apply the  ETL & ML pipeline process on text message data to a classifies disaster messages.
+#### This is the project of Udacity's data scientist nanodegree program 
+  Here I'm going to apply the  ETL & ML pipeline process on text message data to classify disaster messages.
 
 ## Installation
 
@@ -46,5 +47,5 @@ follow the following commands to set up your environments.
 
   4- Go to http://0.0.0.0:3001/ or localhost:3001
   
-
-
+## Licensing
+The dataset is provided by Figure Eight in Udacity data scientist nanodegree program.
