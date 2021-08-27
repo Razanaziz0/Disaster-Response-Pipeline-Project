@@ -8,7 +8,8 @@
 * [Licensing](https://github.com/Razanaziz0/Disaster-Response-Pipeline-Project/blob/main/README.md#licensing)
 ## About Project
 #### This is the project of Udacity's data scientist nanodegree program 
-  Here I'm going to apply the  ETL & ML pipeline process on text message data to classify disaster messages.
+  In this project I will apply the ETL & ML pipeline process on text message data to classify disaster messages, we have thousands of messages from different sources and we need to sort them into 36 categories, the main goal of this project is to help emergency workers.  
+
 
 ## Installation
 
