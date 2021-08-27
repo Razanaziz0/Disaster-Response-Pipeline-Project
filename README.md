@@ -4,6 +4,7 @@
 * [About Project](https://github.com/Razanaziz0/Disaster-Response-Pipeline-Project/blob/main/README.md#about-project) 
 * [Installation](https://github.com/Razanaziz0/Disaster-Response-Pipeline-Project/blob/main/README.md#installation)
 * [Instructions to run the code](https://github.com/Razanaziz0/Disaster-Response-Pipeline-Project/blob/main/README.md#instructions-to-run-the-code)
+* [Result](https://github.com/Razanaziz0/Disaster-Response-Pipeline-Project/blob/main/README.md#instructions-to-run-the-code)
 * [Licensing](https://github.com/Razanaziz0/Disaster-Response-Pipeline-Project/blob/main/README.md#licensing)
 ## About Project
 #### This is the project of Udacity's data scientist nanodegree program 
@@ -45,7 +46,11 @@ follow the following commands to set up your environments.
        python run.py
   
 
-  4- Go to http://0.0.0.0:3001/ or localhost:3001
-  
+  4- Go to https://view6914b2f4-3001.udacity-student-workspaces.com/
+## Result
+![Result](https://user-images.githubusercontent.com/58987879/131053707-e80b5e0d-72e6-46f7-bf95-9860fbeb9059.jpg)
+![Result 2](https://user-images.githubusercontent.com/58987879/131053761-8829fee9-5ef5-4cf2-b147-fd3491f6c3ae.jpg)
+
+
 ## Licensing
 The dataset is provided by Figure Eight in Udacity data scientist nanodegree program.
