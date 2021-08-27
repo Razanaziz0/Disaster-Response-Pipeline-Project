@@ -24,6 +24,18 @@ from sklearn.metrics import classification_report,recall_score, make_scorer
 
 
 def load_data(database_filepath):
+    
+    """load_data is function to load data from sqlite database
+        
+        Input:
+            database_filepath --> the file location
+            
+        Output:
+            X --> message data 
+            Y --> 36 categories data
+            category_names: categories columns names
+    """
+    
     engine = create_engine('sqlite:///'+database_filepath)
     df = pd.read_sql("SELECT * FROM categories", engine)
     X = df.message.values
@@ -31,9 +43,14 @@ def load_data(database_filepath):
     category_names=Y.columns
     
     return X, Y,category_names
+
+
+
 url_regex = 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
 
 def tokenize(text):
+    #tokenization function to process your text data
+
     detected_urls = re.findall(url_regex, text)
     for url in detected_urls:
         text = text.replace(url, "urlplaceholder")
@@ -49,6 +66,7 @@ def tokenize(text):
     return clean_tokens
 
 def display_results(y_test, y_pred):
+    
     labels = np.unique(y_pred)
 #     confusion_mat = confusion_matrix(y_test, y_pred, labels=labels)
     accuracy = (y_pred == y_test).mean()
@@ -58,16 +76,51 @@ def display_results(y_test, y_pred):
     print("Accuracy:", accuracy)
      
 def build_model():
+    """build_model function to specify pipeline and define parameters for GridSearchCV
+        
+    Output:
+        GridSearchCV --> model for train and prediction 
+    """    
+    
+    
     pipeline = Pipeline([('vect',   CountVectorizer(tokenizer=tokenize)),('tfidf', TfidfTransformer()),
                      ('MLC', MultiOutputClassifier(KNeighborsClassifier()))])
-    return pipeline
+    
+    parameters = {'MLC__estimator__n_neighbors': [3,5],'MLC__estimator__leaf_size':[10,20,30] }
+    custom_recall = make_scorer(recall_score,average='weighted')
+
+    cv = GridSearchCV(pipeline, param_grid = parameters, n_jobs = -1, verbose=2)
+
+
+    return cv
 
 def evaluate_model(model, X_test, Y_test, category_names):
+    """evaluate_model is function to evaluate test data
+    
+    Input:
+        model --> model was created by using build model
+        X_test 
+        Y_test
+        category_names --> include 36 category names
+        
+
+    """    
+    
     Y_pred = model.predict(X_test)
     display_results(Y_test, Y_pred)
 
 
 def save_model(model, model_filepath):
+    """ save_model is function save trained model to pickle file
+        
+        Input :
+            model--> model after trained
+            model_filepath --> string path to save pickle file
+            
+        Output:
+            pickle file saved to specified path 'model_filepath'
+    """  
+    
     model_file = open(model_filepath,"wb")
     pickle.dump(model, model_file)
     model_file.close()
