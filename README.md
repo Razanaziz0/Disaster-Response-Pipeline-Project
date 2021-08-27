@@ -45,6 +45,16 @@ follow the following commands to set up your environments.
   3- Run the following command in the app's directory to run deploy web app.
   
        python run.py
+       
+  open another Terminal Window.
+  
+  Type
+
+      env|grep WORK
+      
+  In a new web browser window, type in the following:
+
+      https://SPACEID-3001.SPACEDOMAIN
   
 
   4- Go to https://view6914b2f4-3001.udacity-student-workspaces.com/
