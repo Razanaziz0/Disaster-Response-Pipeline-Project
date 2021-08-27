@@ -9,6 +9,8 @@ from sqlalchemy import create_engine
 
 
 def load_data(messages_filepath, categories_filepath):
+    
+    
     messages = pd.read_csv(messages_filepath)
     messages.head()
 
@@ -119,7 +121,7 @@ def clean_data(df,categories):
 
 def save_data(df, database_filename):
     engine = create_engine('sqlite:///'+database_filename)
-    df.to_sql('categories', engine, index=False)
+    df.to_sql('categories', engine, index=False,if_exists='replace')
 
 
 
